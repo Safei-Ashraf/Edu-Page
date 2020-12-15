@@ -55,6 +55,7 @@ div.container-fluid{
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
     /*margin-top: -5vw;>>>>>>>>>>>>>>>>>>>handle with media query*/
+    box-shadow: 0px -2px 1px 1px #0B7691;
 }
 .top-btn:first-of-type{
     background: url('../assets/svg/card-image.svg') no-repeat center;
@@ -161,6 +162,7 @@ div.container-fluid{
     height: 20%;
     margin-top: 10px;
     padding: 10px;
+    line-height: 2em;
 }
 /*bottom-row*/
 .bottom-row{
