@@ -4,10 +4,11 @@
 }
 body{
     font-family: 'Poppins', sans-serif;
+    text-align: center;
 }
 /*Main Container*/
 div.container-fluid{
-        max-width: 900px;
+        max-width: 820px;
     /* position: relative;
 
     width: 100vw;
@@ -18,7 +19,7 @@ div.container-fluid{
     -moz-transition: all 1s ease-in-out;
     -ms-transition: all 1s ease-in-out;
     -o-transition: all 1s ease-in-out;
-    overflow: hidden;
+    /* overflow: hidden; */
     font-size: 1.2vw;
     margin-top: 40px;
 }
@@ -31,7 +32,7 @@ div.container-fluid{
 .side-heading{
     /* width: 70%;
     display: inline-block; */
-    font-size: calc(10% + 1vw + 1vh);
+    font-size: calc(10% + 1vw + 0.7vh);
 }
 .top-btn{
     width: 5%;
@@ -79,6 +80,8 @@ div.container-fluid{
 /*Question container > mid row*/
 .question-container{
     border: 3px solid rgb(245,130,31);
+    /* background: url(../assets/imgs/problem-img.png) center no-repeat;
+    background-size: cover; */
     border-radius: 12px;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
@@ -89,10 +92,79 @@ div.container-fluid{
     margin: auto auto;
     margin-top: -10px;
     background-color: rgb(255,255,255);
+    padding-top: 2vw;
+}
+.option{
+    border: 2px solid rgb(15,160,197);
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    height: auto;
+    min-height: 2rem;
+    min-width: 2vw;
+    width: fit-content;
+    margin-right: 0.2vw;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding:15px;
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+.answer-box{
+    border: 2px solid black;
+    position: relative;
+}
+/* Bottom left text */
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+  }
+  
+  /* Top left text */
+  .top-left {
+    position: absolute;
+    top: 53%;
+    left: 16px;
+  }
+  
+  /* Top right text */
+  .top-right {
+    position: absolute;
+    top: 53%;
+    right: 16px;
+  }
+  
+  /* Bottom right text */
+  .bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+  }
+  
+  /* Centered text */
+  .centered {
+    position: absolute;
+    top: 82%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+.answer-place{
+    border-top: 2px solid green;
+    border-bottom: 2px solid green;
+    width: 30%;
+    height: 20%;
+    margin-top: 10px;
+    padding: 10px;
 }
 /*bottom-row*/
 .bottom-row{
     height: 20%;
-    min-height: 5vw;
+    min-height: 6vw;
     background-color: rgb(222,236,246);
 }
