@@ -1,0 +1,91 @@
+/*General Rules*/
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+/*Main Container*/
+div.container-fluid{
+        max-width: 900px;
+    /* position: relative;
+
+    width: 100vw;
+    height: 40vw;
+    margin: auto auto; */
+    transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    overflow: hidden;
+    font-size: 1.2vw;
+    margin-top: 40px;
+}
+/*first Row Styling*/
+.side-heading{
+    /* width: 70%;
+    display: inline-block; */
+    font-size: calc(10% + 1vw + 1vh);
+}
+.top-btn{
+    width: 6%;
+    height: 40px;
+    transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    color: white;
+    border: 3px solid rgb(11, 150, 185);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+.top-btn:first-of-type{
+    background: url('../assets/svg/card-image.svg') no-repeat center;
+    background-size:cover;
+    background-color: rgb(15,160,197);
+    padding: 10px;
+}
+.top-btn:nth-child(3){
+    background: url('../assets/svg/question.svg') no-repeat center;
+    background-size:cover;
+    background-color: rgb(15,160,197);
+    padding: 10px;
+}
+
+
+
+/*middle row*/
+.middle-row{
+    height: 36vw;
+    border-top: 5px white solid;
+    background-color: rgb(15,160,197);
+}
+/*Question container > mid row*/
+.question-container{
+    border: 3px solid rgb(245,130,31);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    height: 103%;
+    width: 98%;
+    margin: auto auto;
+    margin-top: -5px;
+}
+/*bottom-row*/
+.bottom-row{
+    height: 20%;
+    min-height: 5vw;
+    background-color: rgb(222,236,246);
+}
