@@ -199,14 +199,18 @@ div.container-fluid{
     -ms-border-radius: 12px;
     -o-border-radius: 12px;
 }
-#reset{
+.bot-btn:first-child{
     background: url(../assets/svg/arrow-repeat.svg) no-repeat center;
     background-size: cover;
     border: 2px solid rgb(15,160,197);
     background-color: rgb(15,160,197);
 }
-#show-answer{
+.bot-btn:nth-child(2){
     background: url(../assets/svg/eye.svg) no-repeat center;
     background-size: cover;
     background-color: rgba(151, 204, 65,1);
+}
+.solved{
+    background-color: rgba(151, 204, 65,0.5);
+
 }

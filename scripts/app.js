@@ -14,6 +14,9 @@ const answersList = document.querySelectorAll('.option');
 
 //Answer Areas:
 const answerAreas = document.querySelectorAll('.answer-place');
+//bottom buttons:
+const resetBtn = document.querySelector('#reset');
+const showAnswersBtn = document.querySelector('#show-answer');
 
 //Handle Click Events:
 const displayImg = ()=>{
@@ -57,3 +60,50 @@ answerAreas.forEach(box=> box.addEventListener('click', ()=>{
                 box.textContent = ''}, 1000);
         }}
     }));
+
+showAnswersBtn.addEventListener('click',showAllAnswers);
+
+function showAllAnswers(){
+    //reset:
+    answerInfo.score = 0;
+    //display all answers in place
+    for(let i = 0; i < modelAnswers.length; i++)
+    {
+        answerAreas[i].textContent = modelAnswers[i];
+        answerInfo.score +=1;
+        answerAreas[i].style.pointerEvents = 'none';
+        answersList.forEach(option => {
+            if(modelAnswers.includes(option.textContent)){
+                option.classList.add('hide-answer');
+            }
+        })
+    }
+    if(answerInfo.score >= modelAnswers.length)
+    {
+        showAnswersBtn.disabled = true;
+        showAnswersBtn.style.backgroundColor = 'rgba(151,204,65,0.5)';
+    }
+}
+
+resetBtn.addEventListener('click', resetAll);
+
+function resetAll(){
+    //restore all options back
+    answersList.forEach(option => {
+        option.classList.remove('selected-option','hide-answer')});
+    //clear all answer areas
+    answerAreas.forEach(answer => {
+        answer.textContent = '';
+        answer.style.pointerEvents = 'auto';});
+    //re-enable show answers button
+    showAnswersBtn.disabled = false;
+    showAnswersBtn.classList.remove('solved');
+    showAnswersBtn.style.backgroundColor = 'rgba(151,204,65,1)';
+    //clear answerInfo.score back to 0;
+    //clear answerInfo.selected
+    //clear answerInfo.checked
+    answerInfo.selected = false;
+    answerInfo.score = 0;
+    answerInfo.selected = '';
+    answerInfo.option = '';
+}
