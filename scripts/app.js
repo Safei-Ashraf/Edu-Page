@@ -25,14 +25,17 @@ const displayHelp = ()=>{
 helpBtn.addEventListener('click', displayHelp);
 
 //event checks if answer is correct or wrong:
-answersList.forEach(option => option.addEventListener('click',
+answersList.forEach((option,key) => option.addEventListener('click',
     ()=>{
-    console.log('answer clicked', option)
     answerInfo.selected = option.textContent;
-    console.log(answerInfo.selected);
     answerInfo.checked = modelAnswers.includes(answerInfo.selected);
     answerInfo.option = option.id;
-    console.log(answerInfo.storedValue);
+    //toggling class active on answer selection:
+    option.classList.toggle('selected-option');
+    answersList.forEach((ell, els)=>{
+        if(key !== els) {
+            ell.classList.remove('selected-option');
+        }});
 }));
 
 answerAreas.forEach(box=> box.addEventListener('click', ()=>{
@@ -41,11 +44,11 @@ answerAreas.forEach(box=> box.addEventListener('click', ()=>{
         if(answerInfo.checked)
         {
             document.getElementById(answerInfo.option).classList.add('hide-answer');
-            box.classList.add('hide-answer');
             box.textContent = answerInfo.selected;
+            box.style.pointerEvents = 'none'; //disable box if correct answer chosen
         }
         else{
             box.textContent = 'X'
-        }
-    }
+            setTimeout(()=>{box.textContent = ''}, 1500);
+        }}
     }));

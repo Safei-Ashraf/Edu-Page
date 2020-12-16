@@ -119,6 +119,10 @@ div.container-fluid{
     cursor: pointer;
     z-index: 2;
 }
+.selected-option{
+    color: white;
+    background-color: rgb(15,160,197);
+}
 .answer-box{
     border: 1px solid black;
     position: relative;
@@ -127,6 +131,9 @@ div.container-fluid{
     margin-top: -10px;
     height: 100%;
     z-index: 3;
+}
+.hide-answer{
+    visibility: hidden;
 }
 /* Bottom left text */
 .bottom-left {
