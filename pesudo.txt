@@ -1,0 +1,28 @@
+1- add an h2 "What's in the basket, Choose and Write
+2- add next to it 2 buttons for "dummy image" and one for help
+3-dummy page button should have and icon for image 
+4-help button should have a "?" in it
+
+5-draw a large box below that would act as a container
+6-80% of that box would be in color rgb(15,160,197)
+7-the bot 20% would be in color rgb(222,236,246)
+8-add buttons in that 20% section, one to show answer and one to reset
+9-reset button should have a reset icon 
+10-should answer point should have an eye icon.
+11-add a box that is slightly going out from top and bottom and have some xtra space from left and right
+12-add orange border to that box
+13-add border radius of 12px to that box
+
+14-divide that large box into 3 rows
+14-top row with 8 boxes of probable answers
+15-on click answer should change from "white bg, blue order" into blue bg and writing color to be white"
+16-mid row should have an image
+17-bottom row for answers.
+18-add logic for answes, on click to reply back if answer is correct or wrong.
+19-if wrong, display red "x" mark, display answer for a sec then remove it.
+20-if correct display answer + correct mark next to it.
+21-optional add sound effects 
+22-add pre-loader
+23-make sure the page is scalable, maintain same shape everywhere.
+
+
