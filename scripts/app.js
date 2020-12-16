@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", function () {
+//soundEffects:
+const correctAnswer = document.querySelector('#correct');
+const wrongAnswer = document.querySelector('#wrong');
 //Global obj to hold data:
 let answerInfo = {
     score:0
@@ -49,9 +53,9 @@ answerAreas.forEach(box=> box.addEventListener('click', ()=>{
         {
             document.getElementById(answerInfo.option).classList.add('hide-answer');
             box.textContent = answerInfo.selected;
+            correctAnswer.play();
             box.style.pointerEvents = 'none'; //disable box if correct answer chosen
             answerInfo.score +=1;
-            console.log('score ', answerInfo.score)
             if(answerInfo.score==5)
             {
                 console.log('all solved')
@@ -65,6 +69,7 @@ answerAreas.forEach(box=> box.addEventListener('click', ()=>{
             box.innerHTML = `${answerInfo.selected}   <span style="font-weight:bold; color:red;"> X </span>`
             setTimeout(()=>{
                 box.textContent = ''}, 1000);
+                wrongAnswer.play();
         }}
     }));
 
@@ -134,3 +139,6 @@ function preload() {
 preloader.classList.add("hide");
 }
 setTimeout(preload, 3000);
+
+
+});
