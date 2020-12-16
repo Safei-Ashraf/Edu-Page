@@ -10,7 +10,16 @@ const answersList = document.querySelectorAll('.option');
 const answerAreas = document.querySelectorAll('.answer-place');
 
 //Handle Click Events:
-imgBtn.addEventListener('click', imgDisplay);
-const imgDisplay = ()=>{
+const displayImg = ()=>{
+    console.log('dummy img displayed here');
+    }
+imgBtn.addEventListener('click', displayImg);
 
+const displayHelp = ()=>{
+    console.log('a div overlay with help content here')
 }
+helpBtn.addEventListener('click', displayHelp);
+
+
+answersList.forEach(option => option.addEventListener('click',
+ ()=>{console.log('answer clicked', option)}));
