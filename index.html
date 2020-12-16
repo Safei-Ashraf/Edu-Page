@@ -15,7 +15,27 @@
     <link rel="stylesheet" href="styles/app.css">
 </head>
 <body>
-    <main>
+<!--Sound Effects START-->
+
+    <audio id="correct">
+    <source src="assets/audio/correct.mp3" type="audio/mp3">
+    </audio>
+
+    <audio id="wrong">
+    <source src="assets/audio/wrong.wav" type="audio/wav">
+    </audio>
+    <!--Sound Effects END-->
+
+    <!--Preloader-->
+    <div class="preloader">
+    <div class="loader">
+        <div class="shadow"></div>
+        <div class="box"></div>
+    </div>
+    </div>
+
+    <!--Main Content-->
+    <main id="scaleable-wrapper">
         <div id="overlay-img" class="dummy-img-container">
             <div class="img-content">
                 <p class="img-text">img goes here</p>
@@ -29,7 +49,7 @@
                 <input type="button" value="X" class="close-btn help-close-btn">
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid" id="very-specific-design">
             <div class="row top-row">
                 <h4 class="side-heading col-6">What's in the basket, Choose and Write.</h4>
                     <button class="top-btn col-1 offset-md-3 offset-3 " id="dummy-img-btn">
@@ -39,25 +59,24 @@
             </div>
             <div class="row middle-row">
                 <div class="question-container col-12 container">
-                    <div class="answers">
-                        <div class="row">
-                            <div class="col-2 offset-2 option" id="scissors">scissors</div>
-                            <div class="col-2 option" id="eraser">eraser</div>
-                            <div class="col-2 option" id="ruler">ruler</div>
-                            <div class="col-2 option" id="bag">bag</div>
+                    <div class="answers ml-5">
+                        <div class="row mt-0 options-holder">
+                            <span class="col-2  option" id="scissors">scissors</span>
+                            <span class="col-2 option" id="eraser">eraser</span>
+                            <span class="col-2 option" id="ruler">ruler</span>
+                            <span class="col-2 option" id="bag">bag</span>
+                            <span class="col-2  option" id="pencil-case">case</span>
+                            <span class="col-2 option" id="pencil">pencil</span>
+                            <span class="col-2 option" id="book">book</span>
+                            <span class="col-2 option" id="pen">pen</span>
                         </div>
-                        <div class="row mt-1">
-                            <div class="col-2 offset-2  option" id="pencil-case">pencil-case</div>
-                            <div class="col-2 option" id="pencil">pencil</div>
-                            <div class="col-2 option" id="book">book</div>
-                            <div class="col-2 option" id="pen">pen</div>
-                        </div>
-                        <div class="row answer-box">                            <img src="assets/imgs/problem-img.png" alt="exercise photo look and match">
-                            <div class="bottom-left answer-place">Bottom Left</div>
-                            <div class="top-left answer-place">Top Left</div>
-                            <div class="top-right answer-place">Top Right</div>
-                            <div class="bottom-right answer-place">Bottom Right</div>
-                            <div class="centered answer-place">Centered</div>
+                        <div class="row answer-box">                            
+                            <img src="assets/imgs/problem-img.png" alt="exercise photo look and match" class="img-fluid" id="ex-img">
+                            <div class="bottom-left answer-place"></div>
+                            <div class="top-left answer-place"></div>
+                            <div class="top-right answer-place"></div>
+                            <div class="bottom-right answer-place"></div>
+                            <div class="centered answer-place"><span>&#10004;</span></div>
                         </div>
                     </div>
                 </div>
@@ -69,6 +88,9 @@
         </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
+    <script src="scripts/scaling.js"></script>
     <script src="scripts/app.js"></script>
 </body>
 </html>

@@ -126,4 +126,11 @@ const imgCloseBtn = document.querySelector('.img-close-btn');
 imgCloseBtn.addEventListener('click',()=>{
     document.getElementById("overlay-img").style.display = "none";
 
-})
+});
+
+//Preloader:
+const preloader = document.querySelector(".preloader");
+function preload() {
+preloader.classList.add("hide");
+}
+setTimeout(preload, 3000);
