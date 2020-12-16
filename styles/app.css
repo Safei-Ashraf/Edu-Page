@@ -7,6 +7,55 @@ body{
     font-family: 'Poppins', sans-serif;
     text-align: center;
 }
+/*overlays*/
+#overlay-img, #overlay-help {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 5; /* Specify a stack order in case you're using a different order for other elements */
+    /* background: url(../assets/imgs/problem-img.png) center no-repeat;
+    background-size: cover; */
+    border-radius: 12px;
+    background-color: rgba(255,255,255,0.8);
+    padding-top: 2vw;
+}
+.help-content, .img-content{
+    border: 3px solid rgb(245,130,31);
+    width: 60%;
+    margin: auto auto;
+    height: 38vw;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+.close-btn{
+    float: right;
+    margin-right: 2vw;
+    color: white;
+    background-color: red;
+    font-weight: bolder;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    padding: 10px;
+    outline: transparent;
+}
+
+
 /*Main Container*/
 div.container-fluid{
     max-width: 820px;
@@ -29,11 +78,14 @@ div.container-fluid{
     height: 5vw;
     padding-top: 10px;
     padding-bottom: 1.5vw;
+    z-index: 1;
 }
 .side-heading{
     /* width: 70%;
     display: inline-block; */
     font-size: calc(10% + 1vw + 0.7vh);
+    z-index: 1;
+
 }
 .top-btn{
     width: 5%;
@@ -57,6 +109,8 @@ div.container-fluid{
     -o-transform: scale(1.1);
     /*margin-top: -5vw;>>>>>>>>>>>>>>>>>>>handle with media query*/
     box-shadow: 0px -2px 1px 1px #0B7691;
+    z-index: 1;
+
     
 }
 .top-btn:first-of-type{
@@ -80,6 +134,8 @@ div.container-fluid{
     height: 36vw;
     border-top: 5px white solid;
     background-color: rgb(15,160,197);
+    z-index: 1;
+
 }
 /*Question container > mid row*/
 .question-container{
@@ -97,6 +153,8 @@ div.container-fluid{
     margin-top: -10px;
     background-color: rgb(255,255,255);
     padding-top: 2vw;
+    z-index: 1;
+
 }
 .option{
     border: 2px solid rgb(15,160,197);
@@ -179,12 +237,14 @@ div.container-fluid{
     padding: 10px;
     line-height: 2em;
     cursor: pointer;
+    z-index: 1;
 }
 /*bottom-row*/
 .bottom-row{
     height: 20%;
     min-height: 6vw;
     background-color: rgb(222,236,246);
+    z-index: 1;
 }
 .bot-btn{
     height: auto;

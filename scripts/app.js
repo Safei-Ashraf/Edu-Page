@@ -105,3 +105,25 @@ function showAllAnswers(){
         showAnswersBtn.style.backgroundColor = 'rgba(151,204,65,0.5)';
     }
 }
+
+//overlay logic:
+
+helpBtn.addEventListener('click', showHelpOverlay);
+function showHelpOverlay(){
+    document.getElementById("overlay-help").style.display = "block";
+}
+imgBtn.addEventListener('click', showImgOverlay);
+function showImgOverlay(){
+    document.getElementById("overlay-img").style.display = "block";
+
+}
+
+const helpCloseBtn = document.querySelector('.help-close-btn');
+helpCloseBtn.addEventListener('click',()=>{
+    document.getElementById("overlay-help").style.display = "none";
+});
+const imgCloseBtn = document.querySelector('.img-close-btn');
+imgCloseBtn.addEventListener('click',()=>{
+    document.getElementById("overlay-img").style.display = "none";
+
+})
