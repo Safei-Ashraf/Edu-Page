@@ -11,7 +11,6 @@ const helpBtn = document.querySelector('#help-btn');
 
 //Answer options:
 const answersList = document.querySelectorAll('.option');
-
 //Answer Areas:
 const answerAreas = document.querySelectorAll('.answer-place');
 //bottom buttons:
@@ -52,9 +51,17 @@ answerAreas.forEach(box=> box.addEventListener('click', ()=>{
             box.textContent = answerInfo.selected;
             box.style.pointerEvents = 'none'; //disable box if correct answer chosen
             answerInfo.score +=1;
-            answerInfo.score>=modelAnswers.length? alert('All solved'): console.log('still more');
+            console.log('score ', answerInfo.score)
+            if(answerInfo.score==5)
+            {
+                console.log('all solved')
+                showAnswersBtn.disabled = true;
+                showAnswersBtn.classList.add('solved');
+                showAnswersBtn.style.backgroundColor = 'rgba(151,204,65,0.5)';
+            }
         }
-        else{
+        else
+        {
             box.innerHTML = `${answerInfo.selected}   <span style="font-weight:bold; color:red;"> X </span>`
             setTimeout(()=>{
                 box.textContent = ''}, 1000);
@@ -62,11 +69,25 @@ answerAreas.forEach(box=> box.addEventListener('click', ()=>{
     }));
 
 showAnswersBtn.addEventListener('click',showAllAnswers);
+resetBtn.addEventListener('click', resetAll);
+
+function resetAll(){
+    answersList.forEach(option => {
+        option.classList.remove('selected-option','hide-answer')});
+    answerAreas.forEach(answer => {
+        answer.textContent = '';
+        answer.style.pointerEvents = 'auto';});
+    showAnswersBtn.disabled = false;
+    showAnswersBtn.classList.remove('solved');
+    showAnswersBtn.style.backgroundColor = 'rgba(151,204,65,1)';
+    answerInfo.selected = false;
+    answerInfo.score = 0;
+    answerInfo.selected = '';
+    answerInfo.option = '';
+}
 
 function showAllAnswers(){
-    //reset:
     answerInfo.score = 0;
-    //display all answers in place
     for(let i = 0; i < modelAnswers.length; i++)
     {
         answerAreas[i].textContent = modelAnswers[i];
@@ -83,27 +104,4 @@ function showAllAnswers(){
         showAnswersBtn.disabled = true;
         showAnswersBtn.style.backgroundColor = 'rgba(151,204,65,0.5)';
     }
-}
-
-resetBtn.addEventListener('click', resetAll);
-
-function resetAll(){
-    //restore all options back
-    answersList.forEach(option => {
-        option.classList.remove('selected-option','hide-answer')});
-    //clear all answer areas
-    answerAreas.forEach(answer => {
-        answer.textContent = '';
-        answer.style.pointerEvents = 'auto';});
-    //re-enable show answers button
-    showAnswersBtn.disabled = false;
-    showAnswersBtn.classList.remove('solved');
-    showAnswersBtn.style.backgroundColor = 'rgba(151,204,65,1)';
-    //clear answerInfo.score back to 0;
-    //clear answerInfo.selected
-    //clear answerInfo.checked
-    answerInfo.selected = false;
-    answerInfo.score = 0;
-    answerInfo.selected = '';
-    answerInfo.option = '';
 }
