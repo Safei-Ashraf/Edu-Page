@@ -1,5 +1,7 @@
 //Global obj to hold data:
-let answerInfo = {};
+let answerInfo = {
+    score:0
+};
 //Answers list:
 const modelAnswers = [`eraser`,`ruler`,`pencil`,`book`,`pen`];
 //Catching DOM elements:
@@ -46,9 +48,12 @@ answerAreas.forEach(box=> box.addEventListener('click', ()=>{
             document.getElementById(answerInfo.option).classList.add('hide-answer');
             box.textContent = answerInfo.selected;
             box.style.pointerEvents = 'none'; //disable box if correct answer chosen
+            answerInfo.score +=1;
+            answerInfo.score>=modelAnswers.length? alert('All solved'): console.log('still more');
         }
         else{
-            box.textContent = 'X'
-            setTimeout(()=>{box.textContent = ''}, 1500);
+            box.innerHTML = `${answerInfo.selected}   <span style="font-weight:bold; color:red;"> X </span>`
+            setTimeout(()=>{
+                box.textContent = ''}, 1000);
         }}
     }));
